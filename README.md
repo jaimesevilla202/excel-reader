@@ -7,6 +7,8 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
+git clone https://github.com/jaimesevilla202/excel-reader.git
+cd excel-reader
 ng serve
 ```
 
