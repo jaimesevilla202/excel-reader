@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls" />
+  
+    <div *ngIf="data.length > 0">
+      <div class="mt-3">
+        <input type="text" [(ngModel)]="searchText" placeholder="Search..." class="form-control" />
+        <select [(ngModel)]="searchColumn" class="form-control mt-2">
+            <option value="" disabled selected>Select a column to search</option>
+            <option *ngFor="let header of data[0]; let i = index" [value]="i">{{ header }}</option>
+          </select>
+      </div>
+  
+      <table class="table table-bordered mt-3">
+        <thead>
+          <tr>
+            <th *ngFor="let header of data[0]">{{ header }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of filteredData">
+            <td *ngFor="let cell of row">{{ cell }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
